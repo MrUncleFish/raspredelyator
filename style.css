@@ -175,6 +175,7 @@ h2 {
 .slider-track {
     overflow: hidden;
     border-radius: 12px;
+    max-width: 100%;
 }
 
 .slider-slides {
@@ -187,7 +188,9 @@ h2 {
     border-radius: 12px;
     padding: 20px 12px;
     min-width: 100%;
+    max-width: 100%;
     flex-shrink: 0;
+    overflow: hidden;
 }
 
 .round-header {
@@ -247,10 +250,10 @@ h2 {
 }
 
 .pairs {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
-    justify-items: center;
 }
 
 .pair {
@@ -261,7 +264,6 @@ h2 {
     padding: 6px 8px;
     border-radius: 8px;
     font-size: 0.95rem;
-    width: 100%;
     justify-content: center;
 }
 
@@ -276,6 +278,7 @@ h2 {
     justify-content: center;
     font-weight: bold;
     font-size: 0.8rem;
+    line-height: 1;
     flex-shrink: 0;
 }
 
@@ -294,18 +297,22 @@ h2 {
     }
 
     .round {
-        padding: 14px 8px;
+        padding: 14px 6px;
     }
 
     .pair {
-        padding: 5px 7px;
-        gap: 4px;
+        padding: 4px 5px;
+        gap: 3px;
     }
 
     .pair-num {
-        width: 26px;
-        height: 26px;
-        font-size: 0.8rem;
+        width: 22px;
+        height: 22px;
+        font-size: 0.7rem;
+    }
+
+    .pair-separator {
+        font-size: 0.65rem;
     }
 
     .slider-dot {
@@ -326,4 +333,6 @@ h2 {
 
 .pair.triple {
     border: 1px solid #e9456044;
+    flex-shrink: 1;
+    min-width: 0;
 }
