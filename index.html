@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Распределятор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Распределятор</h1>
+        <p class="subtitle">Составь пары для общения на встрече</p>
+
+        <div id="setup" class="section">
+            <label for="count">Количество участников:</label>
+            <div class="input-row">
+                <button class="btn-adjust" onclick="adjustCount(-1)">−</button>
+                <input type="number" id="count" min="2" max="30" value="6" onchange="clampCount(this)" onblur="clampCount(this)">
+                <button class="btn-adjust" onclick="adjustCount(1)">+</button>
+            </div>
+            <button class="btn-primary" onclick="generate()">Составить расписание</button>
+        </div>
+
+        <div id="tickets" class="section hidden">
+            <div class="ticket-card">
+                <div class="ticket-label">Бумажки для раздачи</div>
+                <div class="ticket-range" id="ticket-range"></div>
+                <div class="ticket-hint">Раздайте каждому участнику бумажку с номером</div>
+            </div>
+        </div>
+
+        <div id="schedule" class="section hidden">
+            <h2>Расписание раундов</h2>
+            <div class="slider-track" id="slider-track">
+                <div class="slider-slides" id="rounds"></div>
+            </div>
+            <div class="slider-nav">
+                <button class="slider-btn" onclick="slideRound(-1)">&lsaquo;</button>
+                <div class="slider-dots" id="slider-dots"></div>
+                <button class="slider-btn" onclick="slideRound(1)">&rsaquo;</button>
+            </div>
+        </div>
+
+        <div id="actions" class="section hidden">
+            <button class="btn-secondary" onclick="reset()">Начать заново</button>
+        </div>
+    </div>
+
+    <footer class="footer">Сделано Дядей Рыбой</footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
